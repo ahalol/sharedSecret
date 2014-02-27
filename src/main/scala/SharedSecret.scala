@@ -8,7 +8,7 @@ import SharedSecret._
 class SharedSecret(val numPeople: Int, val ofHowMany: Int) {
   val numRows = numPeople * 2
   val numCols = numRows + 2 /* which is origin */ + (ofHowMany - numPeople) * 2
-  require(ofHowMany - numPeople < 5, "Not enough independent GF2 vectors")
+  require(ofHowMany - numPeople <= 5, "Not enough independent GF2 vectors")
   
   def create(s: String) = {
     val mat = growGF2IndependentMat(independentBaseGF2Mat)
