@@ -16,5 +16,5 @@ val random3of4 = util.Random.shuffle(shares.toList combinations secretGenerator.
 val decodedBits = SharedSecret.decode(genesisMat, random3of4:_*)
 
 // Printed out: There is no spoon
-(bits2Char andThen (._mkString) andThen println)(decodedBits)
+(bits2Char andThen (_.mkString) andThen println)(decodedBits)
 `````
